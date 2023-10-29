@@ -1,4 +1,4 @@
-PROJECT WITH HaProxy LB >> Three Apache Webservers hosted on AWS EC2 and DNS configured on GoDaddy.com  
+**PROJECT HaProxy LB with 3 Apache Webservers hosted on AWS EC2 and DNS configured on GoDaddy.com**  
 VMs are prepared by Cloudformation  
 Domain name:devopsproject.pl  
 
@@ -23,17 +23,17 @@ backend http_backend_sub
 
 
 
-1.) Run Cloudformation script on AWS  
+**1.) Run Cloudformation script on AWS**  
 -4 instances based on AMAZON AWS AMI  
 -Ports 80 and 22 opened  
 -install apache on 3 of them  
 -install HaProxy on one of them
 
-2.) Configure all of them based on .cfg files    
+**2.) Configure all of them based on .cfg files**   
 -for apache create basic index.html files  
 -for haProxy make changes in cfg file(acl rules for 2 domains and 1 subdomain) 
 
-3.) Add records on GoDaddy.com. Lets say our LB Public IP is >18.215.158.127  
+**3.) Add records on GoDaddy.com. Lets say our LB Public IP is >18.215.158.127**  
 -add RECORD     A    @         IP EC2apache1 #18.215.158.127  
 -add RECORD     A    www       IP EC2apache2 #18.215.158.127  
 -add RECORD     A    subdomain IP EC2apache2 #18.215.158.127  
