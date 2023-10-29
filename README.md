@@ -2,7 +2,7 @@ PROJECT WITH HaProxy LB >> Three Apache Webservers hosted on AWS EC2 and DNS con
 VMs are prepared by Cloudformation  
 Domain name:devopsproject.pl  
 
-<!---
+
 Haproxy is configured to run the movement on acl rules  
 frontend main  
    bind *:80  
@@ -17,7 +17,7 @@ backend http_backend
 backend http_backend_sub  
    balance     roundrobin  
    server  18.208.219.219 18.208.219.219:80 check  
--->
+
 
 
 1.) Run Cloudformation script on AWS  
