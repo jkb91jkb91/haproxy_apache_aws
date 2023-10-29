@@ -4,7 +4,8 @@ Domain name:devopsproject.pl
 
 
 Haproxy is configured to run the movement on acl rules  
-frontend main  
+
+````frontend main  
    bind *:80  
    acl is_devopsproject hdr(host) -i devopsproject.pl www.devopsproject.pl  
    use_backend http_backend if is_devopsproject  
@@ -16,7 +17,7 @@ backend http_backend
    server  54.82.240.204 54.82.240.204:80 check  
 backend http_backend_sub  
    balance     roundrobin  
-   server  18.208.219.219 18.208.219.219:80 check  
+   server  18.208.219.219 18.208.219.219:80 check ``` 
 
 
 
@@ -24,10 +25,12 @@ backend http_backend_sub
 -4 instances based on AMAZON AWS AMI  
 -Ports 80 and 22 opened  
 -install apache on 3 of them  
--install HaProxy on one of them    
+-install HaProxy on one of them
+
 2.) Configure all of them based on .cfg files    
 -for apache create basic index.html files  
--for haProxy make changes in cfg file(acl rules for 2 domains and 1 subdomain)  
+-for haProxy make changes in cfg file(acl rules for 2 domains and 1 subdomain) 
+
 3.) Add records on GoDaddy.com. Lets say our LB Public IP is >18.215.158.127  
 -add RECORD     A    @         IP EC2apache1 #18.215.158.127  
 -add RECORD     A    www       IP EC2apache2 #18.215.158.127  
