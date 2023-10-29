@@ -5,7 +5,7 @@ Domain name:devopsproject.pl
 
 Haproxy is configured to run the movement on acl rules  
 
-````frontend main  
+```frontend main  
    bind *:80  
    acl is_devopsproject hdr(host) -i devopsproject.pl www.devopsproject.pl  
    use_backend http_backend if is_devopsproject  
